@@ -13,7 +13,7 @@ import com.tsl.tsl_smr_mci_fabric.ModLogger;
 public interface GithubIssue {
 
 	// Make new issue with arguments: title,body,label
-	public static long create(String title, String body, String label) {
+	public static int create(String title, String body, String label) {
 		// sets up GitHub Client
 		GitHubClient client = new GitHubClient();
 		client.setOAuth2Token(GithubInfo.TOKEN);
@@ -33,7 +33,7 @@ public interface GithubIssue {
 			issue.setLabels(Arrays.asList(addLabel));
 
 			// Creates Issue and returns ID
-			return issueService.createIssue(GithubInfo.GITHUB_BOT_NAME, GithubInfo.GITHUB_REPOSITORY, issue).getId();
+			return issueService.createIssue(GithubInfo.GITHUB_BOT_NAME, GithubInfo.GITHUB_REPOSITORY, issue).getNumber();
 
 		} catch (Exception e) {
 			// Error Handler

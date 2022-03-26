@@ -18,7 +18,7 @@ import net.minecraft.text.LiteralText;
 
 public class Submit {
 	
-	//defines command params, and calls submitCommandExecuted when command executed 
+	//defines command parameters, and calls submitCommandExecuted when command executed 
 	public static void submitCommand(CommandDispatcher<ServerCommandSource> dispatcher){
 	    dispatcher.register(literal("submit")
 	        .then(argument("url", string())
@@ -32,9 +32,9 @@ public class Submit {
 		final ServerCommandSource source = ctx.getSource();
 	    final PlayerEntity player = source.getPlayer();
 	    //create issue and store id
-	    long id = GithubIssue.create("New site to add: "+url, description+"*Automated Issue - submitted by "+player.getDisplayName().asString()+" [UUID:"+player.getUuidAsString()+"]*", "addition");
+	    int issueNumber = GithubIssue.create("New site to add: "+url, description+" *Automated Issue - submitted by "+player.getDisplayName().asString()+" [UUID:"+player.getUuidAsString()+"]*", "addition");
 	    //sends player a message
-	    player.sendMessage(new LiteralText("Your, request has been added to Github! Track it with /status "+id),false);
+	    player.sendMessage(new LiteralText("Your request has been added to Github! Track it with /status "+issueNumber),false);
 
 	    return Command.SINGLE_SUCCESS; //return command executed successfully
 	}
