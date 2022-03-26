@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "smrmci",
+  "version": "${version}",
+
+  "name": "TSL SMR MCI FABRIC",
+  "description": "TestSubjectLizzy Stop Mod Reposts Minecraft Integration For Fabric",
+  "authors": [
+    "TestSubjectLizzy"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/smrmci/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.tsl.tsl_smr_mci_fabric.ModMain"
+    ]
+  },
+  "mixins": [
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
