@@ -28,6 +28,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	
 	implementation 'org.eclipse.mylyn.github:org.eclipse.egit.github.core:2.1.5'
+	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
 }
 
 processResources {
