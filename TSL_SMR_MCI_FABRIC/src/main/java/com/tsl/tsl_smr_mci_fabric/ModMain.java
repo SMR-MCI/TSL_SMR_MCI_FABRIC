@@ -1,6 +1,7 @@
 package com.tsl.tsl_smr_mci_fabric;
 
 import com.tsl.tsl_smr_mci_fabric.commands.Check;
+import com.tsl.tsl_smr_mci_fabric.commands.Status;
 import com.tsl.tsl_smr_mci_fabric.commands.Submit;
 
 import net.fabricmc.api.ModInitializer;
@@ -13,6 +14,7 @@ public class ModMain implements ModInitializer {
 		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
 			Submit.registerCommand(dispatcher);
 			Check.registerCommand(dispatcher);
+			Status.registerCommand(dispatcher);
 		});
 		ModLogger.LOGGER.info("Mod Initialized");
 	}
